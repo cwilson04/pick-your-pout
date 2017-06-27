@@ -1,7 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Question.find_or_create_by({text:"What is your skin tone?"})
+Question.find_or_create_by({text:"What is your usual lip go-to look?"})
+Question.find_or_create_by({text:"What color family do you typically gravitate towards?"})
+Question.find_or_create_by({text:"What finished look do you prefer?"})
+Answer.find_or_create_by({text:"Cool", question:Question.first})
+Answer.find_or_create_by({text:"Warm", question:Question.first})
+Answer.find_or_create_by({text:"Neutral", question:Question.first})
+Answer.find_or_create_by({text:"I don't know", question:Question.first})
+Answer.find_or_create_by({text:"Bold and Bright", question:Question.second})
+Answer.find_or_create_by({text:"Sheer hues", question:Question.second})
+Answer.find_or_create_by({text:"Neutrals", question:Question.second})
+Answer.find_or_create_by({text:"Only lip balm", question:Question.second})
+Answer.find_or_create_by({text:"Pinks", question:Question.third})
+Answer.find_or_create_by({text:"Peach or coral", question:Question.third})
+Answer.find_or_create_by({text:"Reds", question:Question.third})
+Answer.find_or_create_by({text:"Nudes and neutrals", question:Question.third})
+Answer.find_or_create_by({text:"Plums and purples", question:Question.third})
+Answer.find_or_create_by({text:"Glossy", question:Question.fourth})
+Answer.find_or_create_by({text:"Matte", question:Question.fourth})
+Answer.find_or_create_by({text:"Frosted", question:Question.fourth})
+Answer.find_or_create_by({text:"Something fun", question:Question.fourth})
