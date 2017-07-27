@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :questions,only:[:show]
+  resources :suggestions
 
   get 'welcome/index'
 
