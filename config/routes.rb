@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :questions,only:[:show]
-  resources :suggestions
+  
+  resources :suggestions do 
+    resources :questions,only:[:show]
+  end
 
   get 'welcome/index'
 
   get 'welcome/about'
 
   get 'welcome/getstarted'
+  
+  get 'welcome/start_survey'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

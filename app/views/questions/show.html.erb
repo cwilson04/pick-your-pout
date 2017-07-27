@@ -1,11 +1,11 @@
 
-<form>
+<form action="/suggestions" method="PUT">
     <h3><%= @question.text %></h3>
     <% @question.answers.each do |answer| %>
  
   <div class="radio">
   <label>
-    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+    <input type="radio" name="answer" id=<%= answer.id %> value=<%= answer.id %>>
     <%= answer.text %>
   </label>
 </div>
