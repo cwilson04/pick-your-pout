@@ -3,12 +3,11 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @suggestion = Suggestion.find(params[:suggestion_id])
   end
   
   def create
-    suggestion = Suggestion.new({user:current_user})
-    answer = Answer.find(params[:id])
-    suggestion.answers.push(answer)
+    
   end
   
 end

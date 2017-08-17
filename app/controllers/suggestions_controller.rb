@@ -4,6 +4,7 @@ class SuggestionsController < ApplicationController
     end
     
     def update
+        byebug
         @suggestion = Suggestion.find(params[:suggestion_id])
         @answer = Answer.find(params[:answer])
         @suggestion.answers.push(@answer)
