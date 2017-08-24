@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170711182112) do
+ActiveRecord::Schema.define(version: 20170824162707) do
 
   create_table "answers", force: :cascade do |t|
     t.string   "text"
@@ -27,10 +27,15 @@ ActiveRecord::Schema.define(version: 20170711182112) do
   end
 
   create_table "suggestions", force: :cascade do |t|
-    t.string   "text"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "skin_tone"
+    t.string   "lip_look"
+    t.string   "color"
+    t.string   "finish"
+    t.string   "color_recommendation"
+    t.string   "gloss_recommendation"
   end
 
   create_table "users", force: :cascade do |t|
