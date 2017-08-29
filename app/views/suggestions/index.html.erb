@@ -1,7 +1,10 @@
 <% if @suggestions.empty? %><h3>Looks like you don't have any suggestions yet. Get started here. </h3>
-<button type="button" class="btn btn-default"><%= link_to "Start Here", question_path(1) %></button>
+  <button type="button" class="btn btn-default"><%= link_to "Start Here", question_path(1) %></button>
 <% else %>
-<% @suggestions.each do |suggestion| %>
-<%= suggestion.text %>
-<% end %>
+  <% @suggestions.each do |suggestion| %>
+    <h3><%= "Suggestion " + suggestion.id.to_s %></h3>
+    <% suggestion.answers.each do |answer| %>
+      <p><%= answer.text %></p>
+    <% end %>
+  <% end %>
 <% end %>

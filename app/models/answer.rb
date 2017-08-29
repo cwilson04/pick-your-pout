@@ -1,4 +1,4 @@
 class Answer < ActiveRecord::Base
     belongs_to :question
-    has_many :suggestions
+    has_and_belongs_to_many :suggestions
 end

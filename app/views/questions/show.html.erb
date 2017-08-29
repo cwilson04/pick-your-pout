@@ -1,17 +1,14 @@
+<%= form_for @question, url:"/suggestions/" + @suggestion.id.to_s, :method => :PUT do |f| %>
+  <%= f.hidden_field :id, :value => @question.id%>
+  <h3><%= @question.text %></h3>
+  <% @question.answers.each do |answer| %>
 
- 
-<%= form_for @question, url:"/suggestions/" + @suggestion.id.to_s, :method => :PUT, :answer => answer.id do |f| %>
- <h3><%= @question.text %></h3>
-    <% @question.answers.each do |answer| %>
- 
   <div class="radio">
-  <label>
-    <input type="radio" name="answer" id=<%= answer.id %> value=<%= answer.id %>>
-   <%= answer.text %>
-  </label>
+    <label>
+      <input type="radio" name="answer" id=<%= answer.id %> value=<%= answer.id %>>
+      <%= answer.text %>
+    </label>
     <% end %>
+  </div>
   <%= f.submit "Submit", class:"btn btn-default" %>
-</div>
- <% end %>
-
- 
+<% end %>
